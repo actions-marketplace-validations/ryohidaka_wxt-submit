@@ -1,7 +1,7 @@
-# wxt-submit
+# WXT Submit
 
-[![release](https://badgen.net/github/release/ryohidaka/wxt-submit)](https://github.com/ryohidaka/wxt-submit/releases/)
-[![Test Action](https://github.com/ryohidaka/wxt-submit/actions/workflows/main.yml/badge.svg)](https://github.com/ryohidaka/wxt-submit/actions/workflows/main.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/ryohidaka/action-wxt-submit)](https://github.com/ryohidaka/action-wxt-submit/releases/)
+[![Test Action](https://github.com/ryohidaka/action-wxt-submit/actions/workflows/main.yml/badge.svg)](https://github.com/ryohidaka/action-wxt-submit/actions/workflows/main.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B6TVH92)
@@ -18,6 +18,7 @@ Only **pnpm** is supported.
 - uses: ryohidaka/wxt-submit@v1
   with:
     dry-run: true
+    root-path: .
 
     # For Chrome Extension
     chrome: true
@@ -42,15 +43,16 @@ Only **pnpm** is supported.
 
 ## Inputs
 
-| input     | required | default | description  |
-| --------- | -------- | ------- | ------------ |
-| `dry-run` | ❌       | `false` | Dry Run Flag |
+| input       | required | default | description                      |
+| ----------- | -------- | ------- | -------------------------------- |
+| `dry-run`   |          | `false` | Dry Run Flag                     |
+| `root-path` |          | `.`     | The root path of the wxt project |
 
 ### For Chrome Extension
 
 | input                  | required | default | description                          |
 | ---------------------- | -------- | ------- | ------------------------------------ |
-| `chrome`               | ❌       | `false` | Flag whether to target chrome or not |
+| `chrome`               |          | `false` | Flag whether to target chrome or not |
 | `chrome-extension-id`  | ✔        |         | Chrome Extension ID                  |
 | `chrome-client-id`     | ✔        |         | Chrome Client ID                     |
 | `chrome-client-secret` | ✔        |         | Chrome Client Secret                 |
@@ -60,7 +62,7 @@ Only **pnpm** is supported.
 
 | input                  | required | default | description                           |
 | ---------------------- | -------- | ------- | ------------------------------------- |
-| `firefox`              | ❌       | `false` | Flag whether to target firefox or not |
+| `firefox`              |          | `false` | Flag whether to target firefox or not |
 | `firefox-extension-id` | ✔        |         | Firefox Extension ID                  |
 | `firefox-jwt-issuer`   | ✔        |         | Firefox JWT Issuer                    |
 | `firefox-jwt-secret`   | ✔        |         | Firefox JWT Secret                    |
@@ -69,7 +71,7 @@ Only **pnpm** is supported.
 
 | input                   | required | default | description                        |
 | ----------------------- | -------- | ------- | ---------------------------------- |
-| `edge`                  | ❌       | `false` | Flag whether to target Edge or not |
+| `edge`                  |          | `false` | Flag whether to target Edge or not |
 | `edge-product-id`       | ✔        |         | Edge Product ID                    |
 | `edge-client-id`        | ✔        |         | Edge Client ID                     |
 | `edge-client-secret`    | ✔        |         | Edge Client Secret                 |
